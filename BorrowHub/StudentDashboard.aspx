@@ -44,12 +44,11 @@
 
             <!-- NAV TABS -->
             <div class="bh-tabs">
-                <a class="bh-tab bh-tab-active-student" href="#">Dashboard</a>
-                <a class="bh-tab" href="#">Borrow</a>
-                <a class="bh-tab" href="#">Pending Request</a>
-                <a class="bh-tab" href="#">History</a>
+                <a class="bh-tab bh-tab-active-student" href="StudentDashboard.aspx">Dashboard</a>
+                <a class="bh-tab" href="StudentBorrow.aspx">Borrow</a>
+                <a class="bh-tab" href="StudentPending.aspx">Pending Request</a>
+                <a class="bh-tab" href="StudentHistory.aspx">History</a>
             </div>
-
             <!-- SUMMARY CARDS -->
             <div class="row g-3 bh-cards-row">
                 <div class="col-md-3">
