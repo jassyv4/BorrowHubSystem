@@ -13,11 +13,13 @@
     <link href="https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css" rel="stylesheet" />
     <!-- Shared dashboard CSS -->
     <link rel="stylesheet" href="<%= ResolveUrl("~/css/dashboard.css") %>" />
-
     <style>
-        /* ===== BORROW PAGE EXTRA STYLES (on top of dashboard.css) ===== */
-
-        /* yellow "+ Add Request" bar */
+    .bh-tab-active-student {
+        background: #f5dd3d !important;  
+        color: #1f2933 !important;       
+    }
+    </style>
+    <style>
         .bh-addrequest-header {
             background-color: #f5dd3d;
             color: #1f2933;
@@ -33,7 +35,6 @@
             opacity: 0.9;
         }
 
-        /* grid of item cards */
         .bh-borrow-grid {
             background-color: #ffffff;
             border-radius: 0 0 10px 10px;
@@ -104,7 +105,6 @@
             font-size: 14px;
         }
 
-        /* borrow form wrapper (reuse admin styles but dedicated ID here) */
         #studentBorrowFormWrapper {
             display: none;
             margin-top: 16px;
@@ -146,13 +146,12 @@
             </div>
 
             <!-- NAV TABS -->
-            <div class="bh-tabs">
+            <div class="bh-tabs bh-tabs-student">
                 <a class="bh-tab" href="StudentDashboard.aspx">Dashboard</a>
                 <a class="bh-tab bh-tab-active-student" href="StudentBorrow.aspx">Borrow</a>
                 <a class="bh-tab" href="StudentPending.aspx">Pending Request</a>
                 <a class="bh-tab" href="StudentHistory.aspx">History</a>
             </div>
-
             <!-- "+ Add Request" + BORROW GRID -->
             <div class="bh-returns-wrapper" style="margin-top:12px;">
                 <div id="btnToggleBorrowForm" class="bh-addrequest-header">
@@ -397,8 +396,6 @@
                         formWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     });
                 }
-
-                // When clicking an item card, fill the form with that item
                 document.querySelectorAll('.bh-borrow-card').forEach(function (card) {
                     card.addEventListener('click', function () {
                         var item = card.getAttribute('data-item') || '';
@@ -410,7 +407,6 @@
                         if (itemInput) itemInput.value = item;
                         if (catInput) catInput.value = cat;
 
-                        // make sure form is visible
                         if (formWrapper && !formWrapper.classList.contains('show')) {
                             formWrapper.classList.add('show');
                         }
@@ -418,7 +414,6 @@
                     });
                 });
 
-                // Fake submit just to show it's working (no backend yet)
                 var btnFakeSubmit = document.getElementById('btnFakeSubmit');
                 if (btnFakeSubmit) {
                     btnFakeSubmit.addEventListener('click', function () {

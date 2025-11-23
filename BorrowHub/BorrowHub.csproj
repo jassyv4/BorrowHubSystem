@@ -128,6 +128,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="imgs\gsis-thumb-removebg-preview.png" />
     <Content Include="imgs\sti background.jpg" />
     <Content Include="js\script.js" />
     <Content Include="Login.aspx" />
@@ -189,6 +190,8 @@
     <Content Include="Site.Master" />
     <Content Include="StudentBorrow.aspx" />
     <Content Include="StudentDashboard.aspx" />
+    <Content Include="StudentHistory.aspx" />
+    <Content Include="StudentPending.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -298,6 +301,20 @@
     </Compile>
     <Compile Include="StudentDashboard.aspx.designer.cs">
       <DependentUpon>StudentDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentHistory.aspx.cs">
+      <DependentUpon>StudentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentHistory.aspx.designer.cs">
+      <DependentUpon>StudentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPending.aspx.cs">
+      <DependentUpon>StudentPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPending.aspx.designer.cs">
+      <DependentUpon>StudentPending.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

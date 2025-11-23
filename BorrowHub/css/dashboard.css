@@ -1,7 +1,7 @@
 ﻿:root {
-    --bh-primary: #0046AD; /* main blue */
-    --bh-primary-soft: #e4efff; /* soft blue background */
-    --bh-yellow: #ffc928; /* accent yellow */
+    --bh-primary: #0046AD;
+    --bh-primary-soft: #e4efff;
+    --bh-yellow: #ffc928; 
     --bh-bg: #f4f7fb;
     --bh-card: #ffffff;
     --bh-text-main: #1f2933;
@@ -132,11 +132,10 @@ body {
 }
 
 .bh-tab-active-student {
-    background: var(--bh-tab-active);
-    color: #fff;
+    background: #f5dd3d !important; 
+    color: #1f2933 !important; 
 }
 
-/* summary cards */
 .bh-cards-row {
     margin-bottom: 24px;
 }
@@ -270,7 +269,6 @@ body {
         margin-bottom: 4px;
     }
 
-/* you can later position a student image on the right side */
 .bh-welcome-illustration-placeholder {
     position: absolute;
     right: 24px;
@@ -302,9 +300,8 @@ body {
     margin-top: 12px;
 }
 
-/* "+ Add Request" header bar */
 .bh-requests-header {
-    background-color: #1f4f7f; /* deep blue like figma header */
+    background-color: #1f4f7f; 
     color: #fff;
     padding: 12px 18px;
     border-radius: 10px 10px 0 0;
@@ -327,7 +324,7 @@ body {
 
 /* request cards */
 .bh-request-card {
-    background-color: #e5f1ff; /* light blue row */
+    background-color: #e5f1ff; 
     border-radius: 10px;
     padding: 12px 16px;
     margin-bottom: 10px;
@@ -516,7 +513,7 @@ body {
 
 /* each item row */
 .bh-return-card {
-    background-color: #e5f1ff; /* same light blue as requests */
+    background-color: #e5f1ff; 
     border-radius: 10px;
     padding: 12px 16px;
     margin-bottom: 10px;
@@ -814,7 +811,7 @@ body {
     border-radius: 12px;
     padding: 8px 20px;
     font-size: 14px;
-    background-color: #94a3b8; /* soft slate */
+    background-color: #94a3b8; 
     color: #fff;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -928,3 +925,19 @@ body {
     font-weight: 600;
     font-size: 12px;
 }
+.bh-addrequest-header {
+    background-color: #f5dd3d;
+    color: #1f2933;
+    padding: 12px 18px;
+    border-radius: 10px 10px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bh-addrequest-header-sub {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+
+

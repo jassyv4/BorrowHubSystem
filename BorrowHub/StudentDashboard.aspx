@@ -12,6 +12,27 @@
     <link href="https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css" rel="stylesheet" />
     <!-- Custom dashboard CSS -->
     <link rel="stylesheet" href="css/dashboard.css" />
+    <style>
+    .bh-tab-active-student {
+        background: #f5dd3d !important;  
+        color: #1f2933 !important;       
+    }
+    </style>
+    <style>
+        .bh-addrequest-header {
+            background-color: #f5dd3d !important;
+            color: #1f2933 !important;
+            padding: 12px 18px;
+            border-radius: 10px 10px 0 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .bh-addrequest-header-sub {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body class="dashboard-page">
     <form id="form1" runat="server">
@@ -43,7 +64,7 @@
             </div>
 
             <!-- NAV TABS -->
-            <div class="bh-tabs">
+            <div class="bh-tabs bh-tabs-student">
                 <a class="bh-tab bh-tab-active-student" href="StudentDashboard.aspx">Dashboard</a>
                 <a class="bh-tab" href="StudentBorrow.aspx">Borrow</a>
                 <a class="bh-tab" href="StudentPending.aspx">Pending Request</a>
@@ -117,17 +138,13 @@
                     <br /><br />
                     <span>— BorrowHub Admin Team</span>
                 </div>
-
-                <div class="bh-welcome-illustration-placeholder">
-                    <!-- can later put an image here (e.g., STI students PNG) -->
-                </div>
             </div>
 
             <!-- MY BORROWED ITEMS -->
             <div class="mt-4">
-                <div class="bh-section-header">
+                <div class="bh-addrequest-header">
                     <div>My Borrowed Items</div>
-                    <div class="bh-section-sub">Track items you currently have on loan.</div>
+                    <div class="bh-addrequest-header-sub">Track items you currently have on loan.</div>
                 </div>
                 <div class="bh-section-body">
                     <div class="bh-item-row">
