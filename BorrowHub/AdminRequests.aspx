@@ -228,28 +228,22 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                // ========== 1. Expand / collapse "More information" on each card ==========
                 document.querySelectorAll('.bh-request-card').forEach(function (card) {
                     card.addEventListener('click', function (e) {
-                        // don't toggle when clicking approve/deny buttons
                         if (e.target.closest('.bh-circle-btn')) {
                             return;
                         }
                         card.classList.toggle('expanded');
                     });
                 });
-
-                // ========== 2. Show/hide the Borrow form when "+ Add Request" is clicked ==========
                 var header = document.querySelector('.bh-requests-header');
                 var formWrapper = document.querySelector('.bh-request-form-wrapper');
 
                 if (header && formWrapper) {
                     header.addEventListener('click', function () {
-                        formWrapper.classList.toggle('show');   // adds/removes the .show class
+                        formWrapper.classList.toggle('show');   
                     });
                 }
-
-                // ========== 3. Toggle between Borrow and Return forms ==========
                 var borrowBtn = document.getElementById('btnBorrowToggle');
                 var returnBtn = document.getElementById('btnReturnToggle');
                 var borrowForm = document.getElementById('borrowForm');

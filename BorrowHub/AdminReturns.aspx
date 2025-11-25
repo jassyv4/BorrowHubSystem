@@ -157,7 +157,6 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                // ===== 1. Open modal when clicking a return card =====
                 var modal = document.getElementById('returnModal');
                 var modalItemTitle = document.getElementById('modalItemTitle');
                 var modalBorrower = document.getElementById('modalBorrowerText');
@@ -165,28 +164,22 @@
 
                 document.querySelectorAll('.bh-return-card').forEach(function (card) {
                     card.addEventListener('click', function () {
-                        // get item name (text before the badge)
+
                         var titleEl = card.querySelector('.bh-return-title');
                         var rawTitle = titleEl ? titleEl.childNodes[0].textContent.trim() : 'Item';
 
-                        // get borrower line
                         var metaEl = card.querySelector('.bh-return-meta');
                         var borrowerLine = metaEl ? metaEl.textContent.trim().split('\n')[0] : '';
 
-                        // set modal texts
                         modalItemTitle.textContent = 'Return: ' + rawTitle;
                         modalBorrower.textContent = borrowerLine || 'Processing return';
 
-                        // reset notes & condition
                         modalNotes.value = '';
                         setCondition('good');
 
-                        // show modal
                         modal.classList.add('show');
                     });
                 });
-
-                // ===== 2. Condition buttons =====
                 var condGoodBtn = document.getElementById('condGood');
                 var condDamagedBtn = document.getElementById('condDamaged');
                 var selectedCondition = 'Good Condition';
@@ -212,15 +205,11 @@
                     e.stopPropagation();
                     setCondition('damaged');
                 });
-
-                // ===== 3. Process / Cancel buttons =====
                 var btnProcess = document.getElementById('btnProcessReturn');
                 var btnCancel = document.getElementById('btnCancelReturn');
 
                 btnProcess.addEventListener('click', function (e) {
                     e.stopPropagation();
-
-                    // for now just show an alert; later you can call server-side logic
                     alert('Return processed as: ' + selectedCondition +
                         '\n\nNotes:\n' + (modalNotes.value || '(none)'));
 
@@ -232,7 +221,7 @@
                     modal.classList.remove('show');
                 });
 
-                // optional: click outside dialog to close
+                // click outside dialog to close
                 modal.addEventListener('click', function (e) {
                     if (e.target === modal) {
                         modal.classList.remove('show');
