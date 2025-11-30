@@ -13,9 +13,8 @@
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="css/dashboard.css" />
 
-    <!-- User Management styles (for this page) -->
     <style>
-    /* ===== USER MANAGEMENT SECTION (Dashboard) ===== */
+    /*USER MANAGEMENT SECTION*/
 
     .bh-users-wrapper {
         margin-top: 24px;
