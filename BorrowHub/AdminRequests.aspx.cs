@@ -17,12 +17,6 @@ namespace BorrowHub
                 Response.Redirect("Login.aspx");
                 return;
             }
-
-            // if you still want the label version:
-            // if (!IsPostBack)
-            // {
-            //     lblAdminEmail.Text = Session["Email"] as string;
-            // }
         }
 
         protected void btnLogoutAdmin_Click(object sender, EventArgs e)

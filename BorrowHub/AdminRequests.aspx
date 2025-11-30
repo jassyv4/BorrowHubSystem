@@ -34,7 +34,7 @@
                     <div>
                         <div style="font-size:13px;">Welcome, Admin!</div>
                         <div style="font-size:12px; color:#6b7280;">
-                            <asp:Label ID="lblAdminEmail" runat="server" />
+                            <%: Session["Email"] as string %>
                         </div>
                     </div>
                     <asp:Button ID="btnLogoutAdmin" runat="server" Text="Log out"

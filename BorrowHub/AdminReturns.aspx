@@ -12,42 +12,32 @@
     <link href="https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css" rel="stylesheet" />
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="<%= ResolveUrl("~/css/dashboard.css") %>" />
+
+    <!-- Page-specific overrides to match Inventory modal behavior -->
+    <style>
+        /* Full-screen dark overlay, centered dialog */
+        .bh-modal {
+            position: fixed !important;
+            inset: 0 !important;                /* top:0; right:0; bottom:0; left:0 */
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.55) !important; /* dim everything */
+            z-index: 2000 !important;           /* above tabs and content */
+        }
+
+        .bh-modal.show {
+            display: flex !important;
+        }
+
+        /* Make sure tabs are under the overlay */
+        .bh-tabs {
+            position: relative;
+            z-index: 1 !important;
+        }
+    </style>
 </head>
 <body class="dashboard-page">
-
-    <!-- RETURN MODAL: OUTSIDE the form/shell -->
-    <div id="returnModal" class="bh-modal">
-        <div class="bh-modal-dialog">
-            <div class="bh-modal-title" id="modalItemTitle">Return: Item</div>
-            <div class="bh-modal-sub" id="modalBorrowerText">
-                Processing return for Student Name
-            </div>
-
-            <div class="bh-modal-section-label">Item Condition:</div>
-            <div class="bh-condition-group">
-                <button type="button" id="condGood" class="bh-condition-btn active">
-                    Good Condition
-                </button>
-                <button type="button" id="condDamaged" class="bh-condition-btn">
-                    Damaged
-                </button>
-            </div>
-
-            <div class="bh-modal-section-label">Notes (Optional)</div>
-            <textarea id="modalNotes" class="bh-modal-notes"
-                      placeholder="Add any notes about the item condition or return process..."></textarea>
-
-            <div class="bh-modal-actions">
-                <button type="button" id="btnProcessReturn" class="bh-modal-primary">
-                    Process Return
-                </button>
-                <button type="button" id="btnCancelReturn" class="bh-modal-secondary">
-                    Cancel
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- SINGLE server form -->
     <form id="form1" runat="server">
         <div class="bh-shell">
@@ -79,12 +69,13 @@
 
             <!-- NAV TABS -->
             <div class="bh-tabs">
-    <a class="bh-tab" href="AdminDashboard.aspx">Dashboard</a>
-    <a class="bh-tab" href="AdminRequests.aspx">Requests</a>
-    <a class="bh-tab bh-tab-active-admin" href="AdminReturns.aspx">Returns</a>
-    <a class="bh-tab" href="AdminInventory.aspx">Inventory</a>
-    <a class="bh-tab" href="#">History</a>
-</div>
+                <a class="bh-tab" href="AdminDashboard.aspx">Dashboard</a>
+                <a class="bh-tab" href="AdminRequests.aspx">Requests</a>
+                <a class="bh-tab bh-tab-active-admin" href="AdminReturns.aspx">Returns</a>
+                <a class="bh-tab" href="AdminInventory.aspx">Inventory</a>
+                <a class="bh-tab" href="#">History</a>
+            </div>
+
             <!-- RETURNS LIST -->
             <div class="bh-returns-wrapper">
                 <div class="bh-returns-header">
@@ -152,6 +143,39 @@
 
         </div>
 
+        <!-- RETURN MODAL (overlay + dialog) -->
+        <div id="returnModal" class="bh-modal">
+            <div class="bh-modal-dialog">
+                <div class="bh-modal-title" id="modalItemTitle">Return: Item</div>
+                <div class="bh-modal-sub" id="modalBorrowerText">
+                    Processing return for Student Name
+                </div>
+
+                <div class="bh-modal-section-label">Item Condition:</div>
+                <div class="bh-condition-group">
+                    <button type="button" id="condGood" class="bh-condition-btn active">
+                        Good Condition
+                    </button>
+                    <button type="button" id="condDamaged" class="bh-condition-btn">
+                        Damaged
+                    </button>
+                </div>
+
+                <div class="bh-modal-section-label">Notes (Optional)</div>
+                <textarea id="modalNotes" class="bh-modal-notes"
+                          placeholder="Add any notes about the item condition or return process..."></textarea>
+
+                <div class="bh-modal-actions">
+                    <button type="button" id="btnProcessReturn" class="bh-modal-primary">
+                        Process Return
+                    </button>
+                    <button type="button" id="btnCancelReturn" class="bh-modal-secondary">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- SCRIPTS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -180,6 +204,7 @@
                         modal.classList.add('show');
                     });
                 });
+
                 var condGoodBtn = document.getElementById('condGood');
                 var condDamagedBtn = document.getElementById('condDamaged');
                 var selectedCondition = 'Good Condition';
@@ -205,6 +230,7 @@
                     e.stopPropagation();
                     setCondition('damaged');
                 });
+
                 var btnProcess = document.getElementById('btnProcessReturn');
                 var btnCancel = document.getElementById('btnCancelReturn');
 
