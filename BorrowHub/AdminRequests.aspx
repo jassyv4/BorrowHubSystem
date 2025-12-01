@@ -44,12 +44,13 @@
 
             <!-- NAV TABS -->
             <div class="bh-tabs">
-    <a class="bh-tab" href="AdminDashboard.aspx">Dashboard</a>
-    <a class="bh-tab bh-tab-active-admin" href="AdminRequests.aspx">Requests</a>
-    <a class="bh-tab" href="AdminReturns.aspx">Returns</a>
-    <a class="bh-tab" href="AdminInventory.aspx">Inventory</a>
-    <a class="bh-tab" href="AdminHistory.aspx">History</a>
-</div>
+                <a class="bh-tab" href="AdminDashboard.aspx">Dashboard</a>
+                <a class="bh-tab bh-tab-active-admin" href="AdminRequests.aspx">Requests</a>
+                <a class="bh-tab" href="AdminReturns.aspx">Returns</a>
+                <a class="bh-tab" href="AdminInventory.aspx">Inventory</a>
+                <a class="bh-tab" href="AdminHistory.aspx">History</a>
+            </div>
+
             <!-- REQUESTS LIST -->
             <div class="bh-requests-wrapper">
 
@@ -133,94 +134,61 @@
                 </div>
             </div>
 
-            <!-- BORROW / RETURN FORM -->
+            <!-- BORROW FORM ONLY -->
             <div class="bh-request-form-wrapper">
                 <div class="bh-request-form-header">
                     Borrow an Item
                 </div>
-                        <div class="bh-request-form-body">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="bh-form-toggle">
-                    <!-- toggle buttons -->
-                    <button type="button" id="btnBorrowToggle" class="active-borrow">
-                        Borrow Item
-                    </button>
-                    <button type="button" id="btnReturnToggle" class="inactive">
-                        Return Item
-                    </button>
-                </div>
-                <button type="button" class="bh-form-submit">Submit</button>
-            </div>
+                <div class="bh-request-form-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="bh-form-toggle">
+                            <!-- Just a label now, no toggle -->
+                            <button type="button" id="btnBorrowToggle" class="active-borrow">
+                                Borrow Item
+                            </button>
+                        </div>
+                        <button type="button" class="bh-form-submit">Submit</button>
+                    </div>
 
-            <!-- BORROW FORM -->
-            <div id="borrowForm" class="row g-3">
-                <div class="col-md-6">
-                    <label class="bh-form-label">Full Name</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Section</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
+                    <!-- BORROW FORM -->
+                    <div id="borrowForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Full Name</label>
+                            <input type="text" class="form-control bh-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Section</label>
+                            <input type="text" class="form-control bh-form-control" />
+                        </div>
 
-                <div class="col-md-6">
-                    <label class="bh-form-label">Quantity</label>
-                    <input type="number" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Borrow date</label>
-                    <input type="date" class="form-control bh-form-control" />
-                </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Quantity</label>
+                            <input type="number" class="form-control bh-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Borrow date</label>
+                            <input type="date" class="form-control bh-form-control" />
+                        </div>
 
-                <div class="col-md-6">
-                    <label class="bh-form-label">Return Date</label>
-                    <input type="date" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Borrow time</label>
-                    <input type="time" class="form-control bh-form-control" />
-                </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Return Date</label>
+                            <input type="date" class="form-control bh-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Borrow time</label>
+                            <input type="time" class="form-control bh-form-control" />
+                        </div>
 
-                <div class="col-md-6">
-                    <label class="bh-form-label">Contact No.</label>
-                    <input type="text" class="form-control bh-form-control" />
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Contact No.</label>
+                            <input type="text" class="form-control bh-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="bh-form-label">Item</label>
+                            <input type="text" class="form-control bh-form-control" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Item</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-            </div>
-
-            <!-- RETURN FORM -->
-            <div id="returnForm" class="row g-3">
-                <div class="col-md-6">
-                    <label class="bh-form-label">Full Name</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Section</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-
-                <div class="col-md-6">
-                    <label class="bh-form-label">Item</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Date Returned</label>
-                    <input type="date" class="form-control bh-form-control" />
-                </div>
-
-                <div class="col-md-6">
-                    <label class="bh-form-label">Condition</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-                <div class="col-md-6">
-                    <label class="bh-form-label">Remarks</label>
-                    <input type="text" class="form-control bh-form-control" />
-                </div>
-            </div>
-        </div>
             </div>
 
         </div>
@@ -228,6 +196,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
+                // expand/collapse request cards
                 document.querySelectorAll('.bh-request-card').forEach(function (card) {
                     card.addEventListener('click', function (e) {
                         if (e.target.closest('.bh-circle-btn')) {
@@ -236,47 +205,14 @@
                         card.classList.toggle('expanded');
                     });
                 });
+
+                // show/hide borrow form when header clicked
                 var header = document.querySelector('.bh-requests-header');
                 var formWrapper = document.querySelector('.bh-request-form-wrapper');
 
                 if (header && formWrapper) {
                     header.addEventListener('click', function () {
-                        formWrapper.classList.toggle('show');   
-                    });
-                }
-                var borrowBtn = document.getElementById('btnBorrowToggle');
-                var returnBtn = document.getElementById('btnReturnToggle');
-                var borrowForm = document.getElementById('borrowForm');
-                var returnForm = document.getElementById('returnForm');
-
-                if (borrowBtn && returnBtn && borrowForm && returnForm) {
-
-                    // default: show borrow, hide return
-                    borrowForm.style.display = 'flex';
-                    returnForm.style.display = 'none';
-
-                    borrowBtn.addEventListener('click', function () {
-                        // button styles
-                        borrowBtn.classList.add('active-borrow');
-                        borrowBtn.classList.remove('inactive');
-                        returnBtn.classList.add('inactive');
-                        returnBtn.classList.remove('active-return');
-
-                        // form visibility
-                        borrowForm.style.display = 'flex';
-                        returnForm.style.display = 'none';
-                    });
-
-                    returnBtn.addEventListener('click', function () {
-                        // button styles
-                        returnBtn.classList.add('active-return');
-                        returnBtn.classList.remove('inactive');
-                        borrowBtn.classList.add('inactive');
-                        borrowBtn.classList.remove('active-borrow');
-
-                        // form visibility
-                        borrowForm.style.display = 'none';
-                        returnForm.style.display = 'flex';
+                        formWrapper.classList.toggle('show');
                     });
                 }
             });
